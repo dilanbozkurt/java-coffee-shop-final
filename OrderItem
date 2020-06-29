@@ -1,0 +1,22 @@
+public class OrderItem {
+
+    private final Beverage beverage;
+    private final int amount;
+
+    public OrderItem(Beverage beverage, int amount) {
+        this.beverage = beverage;
+        this.amount = amount;
+    }
+
+    public int cost() {
+        return amount * beverage.cost();
+    }
+
+    @Override
+    public String toString() {
+        int cost = beverage.cost() * amount;
+        return amount + " " + beverage.toString() + " " + cost + " TL";
+    }
+
+
+}
