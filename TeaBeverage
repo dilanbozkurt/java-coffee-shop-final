@@ -1,0 +1,26 @@
+public abstract class TeaBeverage  extends Beverage{
+
+    protected final boolean hasLemon;
+
+    public TeaBeverage(boolean hasLemon, String size, String name){
+        super(size, name);
+        this.hasLemon=hasLemon;
+    }
+
+    protected abstract int cost();
+
+    @Override
+    public String toString() {
+        String teaString = " ";
+        teaString+= super.toString();
+        teaString+=" ";
+        if (hasLemon)
+            teaString+="with Lemon";
+        else
+            teaString+="without Lemon";
+        return teaString;
+    }
+
+
+
+}
