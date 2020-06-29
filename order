@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+public class Order {
+
+    private List<OrderItem> items;
+    private int totalCost;
+
+    public Order() {
+        this.items = new ArrayList<>();
+    }
+
+    public void add(OrderItem item) {
+        items.add(item);
+    }
+
+    public int totalCost() {
+        for (OrderItem item : items) {
+            totalCost += item.cost();
+        }
+        return totalCost;
+    }
+
+    @Override
+    public String toString() {
+        String s= " ";
+        for (OrderItem item : items) {
+            s+=item.toString();
+            s+="\n";
+        }
+        s+="TOTAL : ";
+        s+=totalCost();
+        return s;
+    }
+
+}
+
