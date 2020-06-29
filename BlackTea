@@ -1,0 +1,23 @@
+public class BlackTea extends TeaBeverage {
+
+    public BlackTea(boolean hasLemon, String size) {
+        super(hasLemon, size, "Black Tea");
+    }
+
+    @Override
+    public int cost() {
+        int cost = 0;
+        if (size.equals(Beverage.SMALL))
+            cost = 3;
+        else if (size.equals(Beverage.MEDIUM))
+            cost = 4;
+        else if (size.equals(Beverage.LARGE))
+            cost = 5;
+
+        if (hasLemon)
+            return cost + 1;
+        else
+            return cost;
+    }
+
+}
