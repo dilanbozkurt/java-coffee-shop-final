@@ -1,0 +1,23 @@
+public abstract class CaffeineBeverage extends Beverage {
+
+    protected final boolean hasMilk;
+
+    public CaffeineBeverage(boolean hasMilk, String size, String name) {
+        super(size, name);
+        this.hasMilk = hasMilk;
+    }
+
+    protected abstract int cost();
+
+    @Override
+    public String toString() {
+        String caffeineString = " ";
+        caffeineString+= super.toString();
+        caffeineString+=" ";
+        if (hasMilk)
+            caffeineString+="with Milk";
+        else
+            caffeineString+="without Milk";
+        return caffeineString;
+    }
+}
