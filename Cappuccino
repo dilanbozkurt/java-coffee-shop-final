@@ -1,0 +1,23 @@
+public class Cappuccino extends CaffeineBeverage {
+
+    public Cappuccino(boolean hasMilk, String size) {
+        super(hasMilk, size, "Cappuccino");
+    }
+
+    @Override
+    public int cost() {
+        int cost = 0;
+
+        if (size.equals(Beverage.SMALL))
+            cost = 6;
+        else if (size.equals(Beverage.MEDIUM))
+            cost = 7;
+        else if (size.equals(Beverage.LARGE))
+            cost = 8;
+        if (hasMilk)
+            return cost + 1;
+        else
+            return cost;
+    }
+
+}
