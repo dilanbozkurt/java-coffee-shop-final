@@ -1,0 +1,20 @@
+public abstract class Beverage {
+    public static String SMALL = "Small";
+    public static String MEDIUM = "Medium";
+    public static String LARGE = "Large";
+
+    protected final String size;
+    protected final String name;
+
+    public Beverage(String size, String name) {
+        this.size = size;
+        this.name = name;
+    }
+
+    protected abstract int cost();
+
+    @Override
+    public String toString() {
+        return size + " " + name;
+    }
+}
